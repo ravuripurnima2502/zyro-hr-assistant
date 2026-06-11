@@ -136,15 +136,21 @@ if query:
         st.write(answer)
 
         with st.expander("📄 Source Documents"):
-            for doc in docs:
-                st.write(
-                    os.path.basename(
-                        doc.metadata.get(
-                            "source",
-                            "Unknown"
-                        )
-                    )
+
+    sources = set()
+
+    for doc in docs:
+        sources.add(
+            os.path.basename(
+                doc.metadata.get(
+                    "source",
+                    "Unknown"
                 )
+            )
+        )
+
+    for source in sources:
+        st.write(source)
 
     st.session_state.messages.append(
         {
