@@ -135,19 +135,28 @@ if query:
     with st.chat_message("assistant"):
         st.write(answer)
 
-        with st.expander("📄 Source Documents"):
+       with st.expander("📄 Source Documents"):
 
-    sources = set()
+              sources = set()
 
-    for doc in docs:
-        sources.add(
-            os.path.basename(
-                doc.metadata.get(
-                    "source",
-                    "Unknown"
-                )
-            )
-        )
+              for doc in docs:
+                  sources.add(
+                     os.path.basename(
+                        doc.metadata.get(
+                            "source",
+                            "Unknown"
+                        )
+                     )
+             )
+
+    for source in sources:
+        st.write(source)
+
+    for source in sources:
+        st.write(source)
+
+    for source in sources:
+        st.write(source)
 
     for source in sources:
         st.write(source)
